@@ -1,0 +1,14 @@
+astropy==8.0.2
+fastapi==0.162.7
+httpx==0.28.1
+numba==0.68.1
+numpy==2.5.4
+Pint==0.26.2
+pydantic==2.14.3
+pytest==9.2.0
+scipy==1.18.1
+sgp4==2.27
+skyfield==1.55
+starlette==1.10.0
+sympy==1.14.0
+uvicorn==0.54.0

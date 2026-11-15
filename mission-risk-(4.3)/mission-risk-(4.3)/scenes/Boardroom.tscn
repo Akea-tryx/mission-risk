@@ -1,0 +1,219 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5qz8h7x2p3v"]
+
+[ext_resource type="Script" path="res://scenes/Boardroom.gd" id="1_u1r8n"]
+
+[sub_resource type="Theme" id="Theme_gea7rq"]
+
+[connection signal="pressed" from="Node/VBoxContainer/TitlePanel/DynamicDialogue/RichTextLabel" to="Node/VBoxContainer/TitlePanel/DynamicDialogue/ButtonPanel/AnalyzeBtn" method="on_analyze_pressed"]
+
+[node name="Boardroom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect"]
+parent = Node
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.051, 0.071, 0.111, 1)
+
+[node name="VBoxContainer" type="VBoxContainer"]
+parent = Node
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_u1r8n")
+
+[node name="TitlePanel" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TitlePanel"]
+layout_mode = 2
+text = "MISSION RISK"
+theme_override_colors/font_color = Color(0.0, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 48
+
+[node name="DynamicDialogue" type="VBoxContainer" parent="VBoxContainer/TitlePanel"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/TitlePanel/DynamicDialogue"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+manual_wrap = true
+text = ""
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+
+[node name="ButtonPanel" type="HBoxContainer" parent="VBoxContainer/TitlePanel/DynamicDialogue"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="VBoxContainer/TitlePanel/DynamicDialogue/ButtonPanel"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="AnalyzeBtn" type="Button" parent="VBoxContainer/TitlePanel/DynamicDialogue/ButtonPanel"]
+layout_mode = 2
+text = "ANALYZE SIMULATION"
+toggle_mode = false
+
+[node name="MissionDossierSection" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MissionDossierLabel" type="Label" parent="VBoxContainer/MissionDossierSection"]
+layout_mode = 2
+text = "SELECT MISSION DIRECTIVE"
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+
+[node name="MissionGrid" type="HBoxContainer" parent="VBoxContainer/MissionDossierSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MissionCard1" type="VBoxContainer" parent="VBoxContainer/MissionDossierSection/MissionGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("Theme_gea7rq")
+
+[node name="MissionCard" type="ColorRect" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard1"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+color = Color(0.05, 0.15, 0.20, 1)
+
+[node name="CardContent" type="VBoxContainer" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard1"]
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 400.0
+
+[node name="DifficultyLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard1/CardContent"]
+layout_mode = 2
+text = "EASY"
+theme_override_colors/font_color = Color.PALE_CYAN
+theme_override_font_sizes/font_size = 36
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard1/CardContent"]
+layout_mode = 2
+text = "Heliophysics"
+theme_override_colors/font_color = Color.WHITE
+theme_override_font_sizes/font_size = 24
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard1/CardContent"]
+layout_mode = 2
+text = "Study solar flares and predict space weather events."
+theme_override_colors/font_color = Color(0.7, 0.9, 1.0, 1)
+
+[node name="StatsLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard1/CardContent"]
+layout_mode = 2
+text = "$120M | 1200 kg | 1.02 AU"
+theme_override_colors/font_color = Color(0.8, 0.9, 1.0, 1)
+
+[node name="MissionCard2" type="VBoxContainer" parent="VBoxContainer/MissionDossierSection/MissionGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("Theme_gea7rq")
+
+[node name="MissionCard" type="ColorRect" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard2"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+color = Color(0.15, 0.12, 0.10, 1)
+
+[node name="CardContent" type="VBoxContainer" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard2"]
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 400.0
+
+[node name="DifficultyLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard2/CardContent"]
+layout_mode = 2
+text = "MEDIUM"
+theme_override_colors/font_color = Color.YELLOW
+theme_override_font_sizes/font_size = 36
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard2/CardContent"]
+layout_mode = 2
+text = "Stellar Circumnavigation"
+theme_override_colors/font_color = Color.WHITE
+theme_override_font_sizes/font_size = 24
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard2/CardContent"]
+layout_mode = 2
+text = "Deploy a probe to the far side of the Sun, measuring coronal mass ejections."
+theme_override_colors/font_color = Color(1.0, 0.9, 0.7, 1)
+
+[node name="StatsLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard2/CardContent"]
+layout_mode = 2
+text = "$280M | 3500 kg | 0.47 AU"
+theme_override_colors/font_color = Color(1.0, 0.9, 0.7, 1)
+
+[node name="MissionCard3" type="VBoxContainer" parent="VBoxContainer/MissionDossierSection/MissionGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("Theme_gea7rq")
+
+[node name="MissionCard" type="ColorRect" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard3"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+color = Color(0.20, 0.10, 0.10, 1)
+
+[node name="CardContent" type="VBoxContainer" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard3"]
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 400.0
+
+[node name="DifficultyLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard3/CardContent"]
+layout_mode = 2
+text = "HARD"
+theme_override_colors/font_color = Color.PALE_RED
+theme_override_font_sizes/font_size = 36
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard3/CardContent"]
+layout_mode = 2
+text = "Deep Space Pioneer"
+theme_override_colors/font_color = Color.WHITE
+theme_override_font_sizes/font_size = 24
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard3/CardContent"]
+layout_mode = 2
+text = "Outpost in the outer solar system to monitor ice giants and their moons."
+theme_override_colors/font_color = Color(1.0, 0.7, 0.7, 1)
+
+[node name="StatsLabel" type="Label" parent="VBoxContainer/MissionDossierSection/MissionGrid/MissionCard3/CardContent"]
+layout_mode = 2
+text = "$650M | 7200 kg | 0.05 AU"
+theme_override_colors/font_color = Color(1.0, 0.7, 0.7, 1)
+
+[node name="SandboxSection" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SandboxToggle" type="ColorRect" parent="VBoxContainer/SandboxSection"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+color = Color(0.05, 0.15, 0.20, 1)
+
+[node name="SandboxLabel" type="Label" parent="VBoxContainer/SandboxSection"]
+layout_mode = 2
+text = "Sandbox Mode [Uncapped Budget]"
+theme_override_colors/font_color = Color(1.0, 0.8, 0.0, 1)
+
+[node name="InitializeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "INITIALIZE CONFIGURATION"
+custom_minimum_size = Vector2(400, 60)
+
+[connection signal="pressed" from="Node/VBoxContainer/InitializeButton" to="Node" method="on_initialize_pressed"]

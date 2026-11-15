@@ -1,0 +1,131 @@
+{
+  "catalog": {
+    "missions": [
+      {"id": "mission_1_earth", "title": "LEO Climate & Amazon Deforestation Tracker", "description": "Monitor Earth's climate systems and Amazon deforestation from Low Earth Orbit", "budget_usd": 85000000, "duration_months": 24, "required_orbit": "orbit_sso", "min_science": 50, "solar_au": 1.0, "difficulty": "easy", "color": "cyan"},
+      {"id": "mission_2_lunar", "title": "Lunar South Pole Water-Ice Mapper", "description": "Map water ice deposits at the lunar south pole for future exploration", "budget_usd": 14000000, "duration_months": 36, "required_orbit": "orbit_lunar", "min_science": 70, "solar_au": 1.0, "difficulty": "medium", "color": "amber"},
+      {"id": "mission_3_jovian", "title": "Jovian Radiation & Magnetosphere Probe", "description": "Probe Jupiter's radiation belts and magnetic field for deep space science", "budget_usd": 26000000, "duration_months": 60, "required_orbit": "orbit_deep", "min_science": 85, "solar_au": 5.2, "difficulty": "hard", "color": "red"}
+    ],
+    "orbits": [
+      {"id": "orbit_leo", "name": "LEO (Low Earth Orbit)", "altitude_km": 400, "inclination_deg": 51.6, "period_min": 92.7, "debris_risk": "low", "max_mass_kg": 5000},
+      {"id": "orbit_sso", "name": "SSO (Sun-Synchronous Orbit)", "altitude_km": 550, "inclination_deg": 97.6, "period_min": 96.2, "debris_risk": "moderate", "max_mass_kg": 3000},
+      {"id": "orbit_leo_800", "name": "High LEO (CelesTrak Debris Belt)", "altitude_km": 800, "inclination_deg": 63.4, "period_min": 101.0, "debris_risk": "high", "max_mass_kg": 2500},
+      {"id": "orbit_lunar", "name": "Lunar Polar Orbit", "altitude_km": 100, "inclination_deg": 90.0, "period_min": 120.0, "debris_risk": "none", "max_mass_kg": 2000},
+      {"id": "orbit_deep", "name": "Jovian Deep Space", "altitude_km": 4200000, "inclination_deg": 0.0, "period_min": 14400, "debris_risk": "extreme", "max_mass_kg": 1500}
+    ],
+    "launch_vehicles": [
+      {"id": "lv_light", "name": "Electron-Class", "cost_usd": 12000000, "max_mass_kg": 3000, "type": "light"},
+      {"id": "lv_medium", "name": "Falcon 9-Class", "cost_usd": 45000000, "max_mass_kg": 6500, "type": "medium"},
+      {"id": "lv_heavy", "name": "Atlas/Vulcan Heavy", "cost_usd": 105000000, "max_mass_kg": 15000, "type": "heavy"}
+    ],
+    "buses": [
+      {"id": "bus_cubesat", "name": "6U CubeSat", "mass_kg": 12, "power_watts": 8, "slots": 2, "cost_usd": 4500000, "lifetime_years": 2},
+      {"id": "bus_smallsat", "name": "SmallSat Explorer", "mass_kg": 60, "power_watts": 30, "slots": 4, "cost_usd": 15000000, "lifetime_years": 5},
+      {"id": "bus_deep", "name": "Deep Space Radiation-Hardened Bus", "mass_kg": 180, "power_watts": 80, "slots": 5, "cost_usd": 38000000, "lifetime_years": 15}
+    ],
+    "instruments": [
+      {"id": "inst_camera", "name": "High-Res Optical Camera", "mass_kg": 10, "power_watts": 15, "data_gbps": 6, "science": 25, "cost_usd": 9000000},
+      {"id": "inst_multispec", "name": "Multispectral Imager", "mass_kg": 25, "power_watts": 35, "data_gbps": 15, "science": 40, "cost_usd": 18000000},
+      {"id": "inst_thermal", "name": "Thermal IR Spectrometer", "mass_kg": 30, "power_watts": 40, "data_gbps": 10, "science": 45, "cost_usd": 24000000},
+      {"id": "inst_radar", "name": "Synthetic Aperture Radar", "mass_kg": 70, "power_watts": 220, "data_gbps": 60, "science": 65, "cost_usd": 38000000}
+    ],
+    "power": [
+      {"id": "pwr_body", "name": "Body Solar Cells", "mass_kg": 6, "output_watts": 45, "reliability_pct": 0.95, "cost_usd": 3000000, "type": "solar"},
+      {"id": "pwr_wings", "name": "Deployable Solar Wings", "mass_kg": 16, "output_watts": 160, "reliability_pct": 0.97, "cost_usd": 8000000, "type": "solar"},
+      {"id": "pwr_rtg", "name": "Multi-Mission RTG Nuclear", "mass_kg": 45, "output_watts": 300, "reliability_pct": 0.99, "cost_usd": 32000000, "type": "rtg"}
+    ],
+    "batteries": [
+      {"id": "bat_std", "name": "Standard Li-Ion", "mass_kg": 8, "capacity_wh": 150, "cost_usd": 3500000},
+      {"id": "bat_highend", "name": "Solid-State High-Density", "mass_kg": 6, "capacity_wh": 340, "cost_usd": 9000000}
+    ],
+    "comms": [
+      {"id": "comms_uhf", "name": "UHF Omni", "mass_kg": 2, "power_watts": 5, "data_gbps_per_pass": 1, "cost_usd": 1500000},
+      {"id": "comms_xband", "name": "X-Band Transceiver", "mass_kg": 6, "power_watts": 22, "data_gbps_per_pass": 10, "cost_usd": 9000000},
+      {"id": "comms_kaband", "name": "Ka-Band High-Gain Dish", "mass_kg": 22, "power_watts": 60, "data_gbps_per_pass": 45, "cost_usd": 24000000}
+    ],
+    "adcs": [
+      {"id": "adcs_coarse", "name": "Coarse Magnetorquers", "mass_kg": 1.2, "power_watts": 3, "fine_control": false, "cost_usd": 1500000},
+      {"id": "adcs_startracker", "name": "3-Axis Star Tracker + Reaction Wheels", "mass_kg": 5, "power_watts": 12, "fine_control": true, "cost_usd": 7500000}
+    ],
+    "propulsion": [
+      {"id": "prop_coldgas", "name": "Cold-Gas Thruster", "mass_kg": 8, "power_watts": 5, "delta_v_mps": 50, "life_months": 6, "cost_usd": 3000000},
+      {"id": "prop_ion", "name": "Hall-Effect Ion Thruster", "mass_kg": 18, "power_watts": 45, "delta_v_mps": 300, "life_months": 36, "cost_usd": 11000000}
+    ]
+  },
+  "narrative": {
+    "boardroom_intro": [
+      "Commander, welcome to RIFT: Space Command. We're facing a critical mission at the NASA Space Apps Challenge.",
+      "Your team consists of: Dr. Elena Rostova (Science), Marcus Chen (Engineering), Capt. Kaelen Vos (Flight Dynamics), and Sarah Jenkins (Public Affairs)."
+    ],
+    "anomalies": [
+      {
+        "id": "anomaly_debris",
+        "title": "CelesTrak Debris Conjunction Alert",
+        "telemetry": "TRACER: OBJECT 2024-087X ON COLLISION PATH - CLOSE APPROACH IN 4.2h - IMPACT PROBABILITY 12.7%",
+        "choices": [
+          {"text": "Execute Debris Avoidance Maneuver (+15% ΔV use, -10 Science)", "science": -10, "fuel": -15},
+          {"text": "Enter Safe Mode (Protect hardware, -25 Science Yield)", "science": -25, "fuel": 0},
+          {"text": "Outsource to Ground Command (No fuel, +5% public trust)", "science": 0, "fuel": 0, "trust": 5}
+        ]
+      },
+      {
+        "id": "anomaly_solar",
+        "title": "Solar Proton Storm Bit-Flip Event",
+        "telemetry": "G4 CLASS SOLAR STORM DETECTED - RADIO BLACKOUT IN PROGRESS - COMMS COMPROMISED",
+        "choices": [
+          {"text": "Switch to UHF Backup (Slower, -15 Science)", "science": -15, "fuel": 0},
+          {"text": "Encrypt & Store Data Locally (+10 Science, +20% risk)", "science": 10, "fuel": 0, "risk": 20},
+          {"text": "Reduce Science Operations (-30 Science, safe)", "science": -30, "fuel": -10}
+        ]
+      },
+      {
+        "id": "anomaly_eclipse",
+        "title": "Eclipse Battery Voltage Sag",
+        "telemetry": "BATTERY VOLTAGE DROPPING TO 22.3V - CRITICAL THRESHOLD 22.0V",
+        "choices": [
+          {"text": "Enter Power Conservation Mode (-50% Science, safe)", "science": -50, "fuel": 0},
+          {"text": "Reroute RTG Power (if equipped, +10 Science)", "science": 10, "fuel": 0, "requires": "rtg"},
+          {"text": "Attempt Emergency Charge (20% failure chance)", "science": 0, "fuel": 0, "risk": 20}
+        ]
+      },
+      {
+        "id": "anomaly_wheel",
+        "title": "Reaction Wheel Friction Spike",
+        "telemetry": "REACTION WHEEL #2 SPIKE DETECTED - ATTITUDE CONTROL DEGRADED",
+        "choices": [
+          {"text": "Activate Backup Magnetorquers (-15 Science)", "science": -15, "fuel": 0},
+          {"text": "Manual Attitude Control (+20% fuel use)", "science": 0, "fuel": -20},
+          {"text": "Abort Science Pass, coast to safe mode", "science": -40, "fuel": -30}
+        ]
+      }
+    ],
+    "press_questions": [
+      {
+        "reporter": "SpaceNews Reporter",
+        "question": "Did RIFT use taxpayer funds on unnecessary redundancy?",
+        "options": [
+          {"text": "Yes, standard practice for mission-critical systems", "trust": -5},
+          {"text": "No, reserve protected 20% contingency buffer", "trust": 15},
+          {"text": "Partially, 10% reserve used efficiently", "trust": 5}
+        ]
+      },
+      {
+        "reporter": "NASA Insider",
+        "question": "How did RIFT handle debris risk in SSO?",
+        "options": [
+          {"text": "Standard mitigation, no incidents", "trust": 10},
+          {"text": "Minor avoidance maneuver executed", "trust": 5},
+          {"text": "Collision near-miss, system recovered", "trust": 0}
+        ]
+      },
+      {
+        "reporter": "Industry Analyst",
+        "question": "What was RIFT's science yield vs budget?",
+        "options": [
+          {"text": "Exceeded projections by 25%", "trust": 15, "science": -10},
+          {"text": "Met projected science targets", "trust": 10, "science": 0},
+          {"text": "Below projections, budget overrun", "trust": -10, "science": 0}
+        ]
+      }
+    ]
+  }
+}

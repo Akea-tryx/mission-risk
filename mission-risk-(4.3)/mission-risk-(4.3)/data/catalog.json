@@ -1,0 +1,334 @@
+{
+  "missions": [
+    {
+      "id": "m01",
+      "title": "Heliophysics Mission",
+      "description": "Study solar flares and predict space weather events that affect Earth communications.",
+      "budget_usd": 120000000,
+      "mass_kg": 1200,
+      "solar_distance_au": 1.02,
+      "orbit": "LEO",
+      "eclipse_hours": 0.5,
+      "data_generation_gbps": 0.8,
+      "science_yield": 850,
+      "difficulty": "EASY",
+      "description_color": "cyan"
+    },
+    {
+      "id": "m02",
+      "title": "Stellar Circumnavigation",
+      "description": "Deploy a probe to the far side of the Sun, measuring coronal mass ejections.",
+      "budget_usd": 280000000,
+      "mass_kg": 3500,
+      "solar_distance_au": 0.47,
+      "orbit": "Heliocentric",
+      "eclipse_hours": 2.0,
+      "data_generation_gbps": 2.5,
+      "science_yield": 920,
+      "difficulty": "MEDIUM",
+      "description_color": "amber"
+    },
+    {
+      "id": "m03",
+      "title": "Deep Space Pioneer",
+      "description": "Outpost in the outer solar system to monitor ice giants and their moons.",
+      "budget_usd": 650000000,
+      "mass_kg": 7200,
+      "solar_distance_au": 0.05,
+      "orbit": "Pluto ELLIPSE",
+      "eclipse_hours": 6.0,
+      "data_generation_gbps": 4.2,
+      "science_yield": 650,
+      "difficulty": "HARD",
+      "description_color": "red"
+    }
+  ],
+  "orbits": [
+    {
+      "id": "orbit01",
+      "name": "LEO (Low Earth Orbit)",
+      "altitude_km": 400,
+      "period_minutes": 97,
+      "requires_adcs": false,
+      "data_cap_gbps": 2.0,
+      "railgun_boost": 0
+    },
+    {
+      "id": "orbit02",
+      "name": "MEO (Medium Earth Orbit)",
+      "altitude_km": 20000,
+      "period_minutes": 720,
+      "requires_adcs": true,
+      "data_cap_gbps": 1.5,
+      "railgun_boost": 1.0
+    },
+    {
+      "id": "orbit03",
+      "name": "HEO (High Elliptical Orbit)",
+      "altitude_km": 35000,
+      "period_minutes": 2450,
+      "requires_adcs": true,
+      "data_cap_gbps": 1.0,
+      "railgun_boost": 2.0
+    },
+    {
+      "id": "orbit04",
+      "name": "Heliocentric Pluto",
+      "altitude_km": 0.05,
+      "period_minutes": 27600,
+      "requires_adcs": true,
+      "data_cap_gbps": 0.5,
+      "railgun_boost": 3.0
+    }
+  ],
+  "launch_vehicles": [
+    {
+      "id": "lv01",
+      "name": "Falcon 9",
+      "mass_capacity_kg": 22700,
+      "cost_usd": 67000000,
+      "reusability": true
+    },
+    {
+      "id": "lv02",
+      "name": "SLS Block 1",
+      "mass_capacity_kg": 26700,
+      "cost_usd": 200000000,
+      "reusability": false
+    },
+    {
+      "id": "lv03",
+      "name": "Ariane 6",
+      "mass_capacity_kg": 21000,
+      "cost_usd": 150000000,
+      "reusability": false
+    }
+  ],
+  "buses": [
+    {
+      "id": "bus01",
+      "name": "CubeSat 3U",
+      "mass_kg": 4,
+      "dry_mass_kg": 3,
+      "power_watts": 30,
+      "cost_usd": 12000000,
+      "data_bandwidth_gbps": 0.5,
+      "science_output": 0.3,
+      "battery_capacity_ah": 8,
+      "space_available_unit": 3
+    },
+    {
+      "id": "bus02",
+      "name": "SmallSats 50U",
+      "mass_kg": 80,
+      "dry_mass_kg": 65,
+      "power_watts": 150,
+      "cost_usd": 65000000,
+      "data_bandwidth_gbps": 2.0,
+      "science_output": 1.0,
+      "battery_capacity_ah": 50,
+      "space_available_unit": 50
+    },
+    {
+      "id": "bus03",
+      "name": "LargeSat 100U",
+      "mass_kg": 350,
+      "dry_mass_kg": 280,
+      "power_watts": 800,
+      "cost_usd": 180000000,
+      "data_bandwidth_gbps": 5.0,
+      "science_output": 2.5,
+      "battery_capacity_ah": 200,
+      "space_available_unit": 100
+    }
+  ],
+  "power": [
+    {
+      "id": "pwr01",
+      "name": "Solar Panels",
+      "mass_kg": 10,
+      "output_watts": 100,
+      "usable_output_watts": 50,
+      "reliability_pct": 0.95,
+      "cost_usd": 500000
+    },
+    {
+      "id": "pwr02",
+      "name": "RTG Unit",
+      "mass_kg": 45,
+      "output_watts": 55,
+      "usable_output_watts": 55,
+      "reliability_pct": 0.99,
+      "cost_usd": 800000
+    },
+    {
+      "id": "pwr03",
+      "name": "Hybrid Solar+RTG",
+      "mass_kg": 55,
+      "output_watts": 180,
+      "usable_output_watts": 150,
+      "reliability_pct": 0.98,
+      "cost_usd": 1500000
+    }
+  ],
+  "batteries": [
+    {
+      "id": "bat01",
+      "name": "Lithium-Ion 20Ah",
+      "mass_kg": 5,
+      "capacity_ah": 20,
+      "efficiency_pct": 0.90,
+      "cost_usd": 85000
+    },
+    {
+      "id": "bat02",
+      "name": "Lithium-Ion 60Ah",
+      "mass_kg": 18,
+      "capacity_ah": 60,
+      "efficiency_pct": 0.92,
+      "cost_usd": 250000
+    },
+    {
+      "id": "bat03",
+      "name": "Lithium-Ion 150Ah",
+      "mass_kg": 45,
+      "capacity_ah": 150,
+      "efficiency_pct": 0.94,
+      "cost_usd": 680000
+    }
+  ],
+  "comms": [
+    {
+      "id": "com01",
+      "name": "X-Band Terminal10W",
+      "mass_kg": 3,
+      "bandwidth_gbps": 0.3,
+      "attenuation_db": 7.5,
+      "cost_usd": 1200000
+    },
+    {
+      "id": "com02",
+      "name": "Ka-Band Terminal10W",
+      "mass_kg": 5,
+      "bandwidth_gbps": 0.6,
+      "attenuation_db": 8.5,
+      "cost_usd": 1800000
+    },
+    {
+      "id": "com03",
+      "name": "S-X Dual-Band",
+      "mass_kg": 12,
+      "bandwidth_gbps": 1.2,
+      "attenuation_db": 6.0,
+      "cost_usd": 3500000
+    }
+  ],
+  "adcs": [
+    {
+      "id": "adc01",
+      "name": "Magnetorqers",
+      "mass_kg": 2,
+      "deployment_type": "passive",
+      "precision_deg": 0.2,
+      "cost_usd": 450000
+    },
+    {
+      "id": "adc02",
+      "name": "Reaction Wheels",
+      "mass_kg": 4,
+      "deployment_type": "active",
+      "precision_deg": 0.05,
+      "cost_usd": 950000
+    },
+    {
+      "id": "adc03",
+      "name": "Magnetometer+Rw",
+      "mass_kg": 7,
+      "deployment_type": "hybrid",
+      "precision_deg": 0.01,
+      "cost_usd": 1600000
+    }
+  ],
+  "propulsion": [
+    {
+      "id": "prop01",
+      "name": "Cold Gas Thrusters",
+      "mass_kg": 1,
+      "efficiency_specific_impulse": 70,
+      "delta_v_m_s": 100,
+      "cost_usd": 65000
+    },
+    {
+      "id": "prop02",
+      "name": "Monopropellant Hydrazine",
+      "mass_kg": 3,
+      "efficiency_specific_impulse": 230,
+      "delta_v_m_s": 350,
+      "cost_usd": 225000
+    },
+    {
+      "id": "prop03",
+      "name": "Electric Xenon Ion",
+      "mass_kg": 15,
+      "efficiency_specific_impulse": 3000,
+      "delta_v_m_s": 8000,
+      "cost_usd": 1800000
+    }
+  ],
+  "instruments": [
+    {
+      "id": "inst01",
+      "name": "Solar Telescope",
+      "mass_kg": 15,
+      "power_kw": 0.02,
+      "data_output_gbps": 0.4,
+      "science_points": 150,
+      "cost_usd": 4200000
+    },
+    {
+      "id": "inst02",
+      "name": "Hydrogen Mapper",
+      "mass_kg": 8,
+      "power_kw": 0.01,
+      "data_output_gbps": 0.2,
+      "science_points": 80,
+      "cost_usd": 1950000
+    },
+    {
+      "id": "inst03",
+      "name": "Beta Ray Spectrometer",
+      "mass_kg": 5,
+      "power_kw": 0.005,
+      "data_output_gbps": 0.1,
+      "science_points": 45,
+      "cost_usd": 1200000
+    },
+    {
+      "id": "inst04",
+      "name": "Neutron Counter",
+      "mass_kg": 6,
+      "power_kw": 0.008,
+      "data_output_gbps": 0.15,
+      "science_points": 55,
+      "cost_usd": 1450000
+    },
+    {
+      "id": "inst05",
+      "name": "Antenna Temperature Monitor",
+      "mass_kg": 2,
+      "power_kw": 0.003,
+      "data_output_gbps": 0.08,
+      "science_points": 35,
+      "cost_usd": 750000
+    },
+    {
+      "id": "inst06",
+      "name": "Gamma Ray Detector",
+      "mass_kg": 10,
+      "power_kw": 0.012,
+      "data_output_gbps": 0.22,
+      "science_points": 95,
+      "cost_usd": 2100000
+    }
+  ]
+}

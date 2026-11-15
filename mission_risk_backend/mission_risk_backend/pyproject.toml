@@ -1,0 +1,8 @@
+[project]
+name = "mission-risk-backend"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = ["numpy", "scipy", "sgp4", "fastapi", "uvicorn", "pydantic"]
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["backend/tests"]
